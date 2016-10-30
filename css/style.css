@@ -1,0 +1,67 @@
+.layout-container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 50px auto;
+    background: yellow;
+}
+
+.layout-header {
+    background: red;
+}
+
+.layout-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background: green;
+    height: 400px;
+}
+
+.game-container {
+    background: blue;
+    position: relative;
+}
+
+.answer-container, .result-container {
+    position: absolute;
+    display: grid;
+}
+
+.code div {
+    white-space: pre;
+}
+
+.information-container {
+    display: grid;
+    grid-template-rows: 100px auto 50px;
+}
+
+.clinton {
+    background-image: url('../res/clinton.png');
+    background-size: 100px 100px;
+    width: 100px;
+    height: 100px;
+}
+
+.trump {
+    background-image: url('../res/trump.png');
+    background-size: 100px 100px;
+    width: 100px;
+    height: 100px;
+}
+
+.target {
+    background-image: url('../res/target.png');
+    background-size: 100px 100px;
+    width: 100px;
+    height: 100px;
+}
+
+.popup {
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    display: none;
+    background: purple;
+    left: calc(50% - 200px);
+    top: 100px;
+}

@@ -1,0 +1,27 @@
+{
+  "name": "build-a-css-grid",
+  "version": "0.0.0",
+  "description": "Learn CSS level 4 grids",
+  "main": "js/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/symi/BuildACSSGrid.git"
+  },
+  "keywords": [
+    "css",
+    "grid"
+  ],
+  "author": "Si Levy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/symi/BuildACSSGrid/issues"
+  },
+  "homepage": "https://github.com/symi/BuildACSSGrid#readme",
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "lodash": "^4.16.4"
+  }
+}
