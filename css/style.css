@@ -49,8 +49,7 @@
 
 .code textarea {
     display: block;
-    width: calc(100% - 40px);
-    height: 24px;
+    width: calc(100% - 50px);
     margin: 4px 32px;
     border: none;
     outline: none;

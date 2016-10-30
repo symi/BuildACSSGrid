@@ -71,12 +71,16 @@
             var matches = codeBlock.match(/{{(.+)}}/) || [];
 
             if (matches.length > 1) {
-                var codeEditor = $('<textarea></textarea>');
+                var codeEditor = $('<textarea></textarea>'),
+                    targetEl = matches[1].split('|')[0],
+                    suggestedRows = +matches[1].split('|')[1];
+
+                codeEditor.attr('rows', Math.max(suggestedRows, 4));
                 codeContainer.append(codeEditor);
                 codeEditor.on('keyup', _.debounce(function () {
-                    if (matches[1] === 'target') {
+                    if (targetEl === 'target') {
                         $('.target').attr('style', codeEditor.val().split('\n').join('\n;'));
-                    } else if (matches[1] === 'container') {
+                    } else if (targetEl === 'container') {
                         $('.result-container').attr('style', codeEditor.val().split('\n').join('\n;'));
                     }
 

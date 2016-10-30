@@ -5,11 +5,11 @@
             winBlurbs: ['some text'],
             code: `.container {
     display:grid;
-{{container}}
+{{container|3}}
 }
 
 .target {
-{{target}}
+{{target|1}}
 }`,
             setup: {
                 container: {
@@ -34,11 +34,11 @@
             winBlurbs: ['some text2'],
             code: `.container {
     display:grid;
-{{container}}
+{{container|3}}
 }
 
 .target {
-{{target}}
+{{target|1}}
 }`,
             setup: {
                 container: {
