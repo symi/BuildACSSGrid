@@ -1,5 +1,5 @@
 (function () {
-    window.currentLevel = 0;
+    window.currentLevel = +window.localStorage.getItem('currentLevel') ;
     window.fillpoint = /(\n{{.+?}}\n)/g;
     var _win = false;
     Object.defineProperty(window, 'win', {
@@ -37,7 +37,7 @@
         });
 
         window.levels.forEach(function (level, index) {
-            var levelEl = $('<button class="level">' + (index + 1) + '</button>')
+            var levelEl = $('<button data-level="' + index + '" class="level">' + (index + 1) + '</button>')
             levels.append(levelEl);
 
             levelEl.on('click', function () {
@@ -87,7 +87,7 @@
             }
         });
 
-        $('#blurb').text(level.blurb);
+        $('#blurb').html(level.blurb);
 
         answerContainer.children().remove();
         resultContainer.children().remove();
@@ -121,15 +121,23 @@
         });
         
         window.currentLevel = levelNumber;
+        window.localStorage.setItem('currentLevel', levelNumber);
 
-        prev.prop('disabled', false);
-        next.prop('disabled', false);
+        prev.css('visibility', 'visible');
+        next.css('visibility', 'visible');
 
         if (window.currentLevel === 0) {
-            prev.prop('disabled', true);
+            prev.css('visibility', 'hidden');
         } else if (window.currentLevel === window.levels.length - 1) {
-            next.prop('disabled', true);
-        }       
+            next.css('visibility', 'hidden');
+        }
+
+        $('.level').each(function() {
+            $(this).removeClass('level-open');
+            if (+$(this).data('level') === window.currentLevel) {
+                $(this).addClass('level-open');
+            }
+        });
     }
 
     function checkResult() {

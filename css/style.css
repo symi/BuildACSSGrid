@@ -2,23 +2,38 @@
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: 50px auto;
-    background: yellow;
+    background: #896387;
+    font-family: 'Open Sans', sans-serif;
+    margin: 20px;
+    font-size: 16px;
 }
 
 .layout-header {
-    background: red;
+    background: #241D3F;
+    font-family: 'Indie Flower', cursive;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    color: #D26B67;
+    text-align: center;
+    font-size: 3em;
 }
 
 .layout-content {
     display: grid;
     grid-template-columns: 50% 50%;
-    background: green;
-    height: 400px;
+    background: #241D3F;
+    height: 550px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .game-container {
-    background: blue;
+    background: #F6D5C0;;
     position: relative;
+    width: calc(100% - 60px);
+    height: calc(100% - 60px);
+    margin: 30px;
+    border-radius: 30px;
 }
 
 .answer-container, .result-container {
@@ -26,31 +41,101 @@
     display: grid;
 }
 
-.code div {
+.code div, .code textarea {
     white-space: pre;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1em;
+}
+
+.code textarea {
+    display: block;
+    width: calc(100% - 40px);
+    height: 24px;
+    margin: 4px 32px;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #D8D8D8;
+}
+
+.code {
+    background-color: #aaa;
+    border-radius: 5px;
+    margin-right: 30px;
+    color: #6D6D6D;
+    padding: 10px;
 }
 
 .information-container {
     display: grid;
     grid-template-rows: 100px auto 50px;
+    border-bottom-right-radius: 30px;
+    margin-top: 20px;
+    color: #807D90;
+}
+
+.blurb pre {
+    white-space: pre;
+    font-family: 'Inconsolata', monospace;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.levels-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.levels-container button {
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #D26B67;
+}
+
+.levels-container button:not(.level-open):hover {
+    opacity: 0.6;
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+@keyframes spin-repeat {
+    0% {
+        -webkit-transform:rotate(0deg)
+    }
+    20% {
+        -webkit-transform:rotate(360deg)
+    }
+    100% {
+        -webkit-transform:rotate(360deg)
+    }
+}
+
+.level-open {
+    color: #EBBDBB !important;
+    animation-name: spin-repeat;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
 }
 
 .clinton {
-    background-image: url('../res/clinton.png');
+    background-image: url('../res/images/clinton.png');
     background-size: 100px 100px;
     width: 100px;
     height: 100px;
 }
 
 .trump {
-    background-image: url('../res/trump.png');
+    background-image: url('../res/images/trump.png');
     background-size: 100px 100px;
     width: 100px;
     height: 100px;
 }
 
 .target {
-    background-image: url('../res/target.png');
+    background-image: url('../res/images/target.png');
     background-size: 100px 100px;
     width: 100px;
     height: 100px;
@@ -61,7 +146,42 @@
     width: 400px;
     height: 300px;
     display: none;
-    background: purple;
-    left: calc(50% - 200px);
+    background: #5AA830;
+    left: calc(50% - 220px);
     top: 100px;
+    box-shadow: 0px 0px 46px 6px rgba(19,70,17,1);
+    color: #fff;
+    padding: 20px;
+}
+
+.popup .popup-title {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    font-size: 1.7em;
+    padding-bottom: 15px;
+}
+
+#level-number {
+    font-weight: bold;
+    transform: rotate(360deg);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+#next-level {
+    background: rgba(19,70,17,1);
+    border: 3px solid white;
+    outline: none;
+    color: white;
+    opacity: 0.8;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    position: absolute;
+    bottom: 20px;
+    left: calc(50% - 75px);
+}
+
+#next-level:hover {
+    opacity: 1;
 }

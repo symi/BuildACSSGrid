@@ -11,7 +11,7 @@
             <div>Build A CSS Grid</div>
         </div>
         <div class="layout-content">
-            <div class="game-container">
+            <div class="game-container">                
                 <div class="answer-container"></div>
                 <div class="result-container"></div>
             </div>
@@ -22,7 +22,10 @@
             </div>
         </div>
         <div class="popup">
-            <span>Congrats you completed level</span><span id="level-number"></span>
+            <div class="popup-title">
+                <span>Congrats you completed level</span>
+                <span id="level-number"></span>
+            </div>
             <div>You learnt:</div>
             <ul id="learn-list"></ul>
             <button id="next-level">Next level!</button>
@@ -31,5 +34,6 @@
         <script src="node_modules/lodash/lodash.js"></script>        
         <script src="js/levels.js"></script>
         <script src="js/app.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata|Indie+Flower|Open+Sans" rel="stylesheet">
     </body>
 </html>
